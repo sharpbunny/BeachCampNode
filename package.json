@@ -1,0 +1,21 @@
+{
+  "name": "myrestapi",
+  "version": "1.0.0",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.3",
+    "node-restful": "^0.2.6"
+  },
+  "devDependencies": {},
+  "description": "Maurice à la playa"
+  
+}
