@@ -1,6 +1,6 @@
 /**
- * Module permettant de se connecter à la base de données
- * Module to connect to mysql database
+ * FR : Module permettant de se connecter à la base de données
+ * EN : Module to connect to mysql database
  */
 
 var mysql = require('mysql');
@@ -30,7 +30,7 @@ function Connection() {
 
 module.exports = new Connection();
 
-/*
+/**
 On utilise la méthode createPool plutôt que la méthode createConnexion
 car elle permet d'ouvrir plusieurs connexions simultanément contrairement 
 à la méthode createConnexion.
