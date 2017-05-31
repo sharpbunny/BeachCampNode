@@ -13,7 +13,7 @@ function Connection() {
 
     this.init = function() {
         this.pool = mysql.createPool({
-            connectionLimite: 5,
+            connectionLimit: 5,
             host: 'localhost',
             user: 'admin',
             password: 'Admin254',

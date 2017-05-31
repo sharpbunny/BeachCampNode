@@ -1,6 +1,7 @@
 //Instanciation des modules
 var bodyParser = require('body-parser');
 var connection = require('../connection.js');
+var getUser = require('../query/getUser');
 var express = require('express');
 var userRouter = express.Router();
 
@@ -18,8 +19,21 @@ userRouter.route('/')
  */
 .post(function(req, res, next) {
     var pseudo = req.body.pseudoUtilisateur;
+    var utilisateur = req.body;
+    console.log(utilisateur);
+    var pseudoExiste = false;
     //Requête pour voir si il existe dans la bdd
-    res.end(pseudo);
+    pseudoExiste = getUser.selectUser(res, pseudo);
+
+    if(pseudoExiste){
+        console.log("Ce pseudo existe déjà fdp!");
+    }
+
+    else{
+        console.log("On part pour insertUser les enfants!");
+        getUser.insertUser(res, req.body);
+    }
+
 });
 
 module.exports = userRouter;
