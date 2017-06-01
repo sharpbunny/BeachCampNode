@@ -13,11 +13,15 @@ function Connection() {
 
     this.init = function() {
         this.pool = mysql.createPool({
-            connectionLimit: 5,
+            connectionLimit: 1000,
+            aquireTimeout   : 60 * 60 * 1000,
             host: 'localhost',
             user: 'admin',
             password: 'Admin254',
-            database: 'beachcamp'
+            timeout : 60 * 60 * 1000,
+            database: 'beachcamp',
+            connection: 'nodeBeach'
+           
         });
     };
 

@@ -18,20 +18,20 @@ userRouter.route('/')
  * In fine, on ajoute un nouvel utilisateur dans la bdd.
  */
 .post(function(req, res, next) {
+    console.log("On rentre dans le post ?");
     var pseudo = req.body.pseudoUtilisateur;
     var utilisateur = req.body;
-    console.log(utilisateur);
     var pseudoExiste = false;
     //Requête pour voir si il existe dans la bdd
     pseudoExiste = getUser.selectUser(res, pseudo);
 
     if(pseudoExiste){
-        console.log("Ce pseudo existe déjà fdp!");
+        console.log("Ce pseudo existe déjà!");
     }
 
     else{
         console.log("On part pour insertUser les enfants!");
-        getUser.insertUser(res, req.body);
+        getUser.insertUser(res, utilisateur);
     }
 
 });

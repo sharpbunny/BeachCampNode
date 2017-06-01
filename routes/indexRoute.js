@@ -4,7 +4,7 @@ var express = require('express');
 var indexRouter = express.Router();
 
 indexRouter.get('/', function(req, res, next){
-    res.end('Suce une bite pour voir.');
+    res.end('BeachCampNode is on like Donkey Kong!');
 });
 
 module.exports = indexRouter;
