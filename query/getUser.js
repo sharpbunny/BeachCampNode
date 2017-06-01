@@ -17,7 +17,7 @@ function User(){
 
             else{
                 console.log("No connection error during select query");
-            con.query('select pseudoUtilisateur from utilisateur where pseudoUtilisateur = "Kikounette"', function(err, result) 
+            con.query('select pseudoUtilisateur from utilisateur where pseudoUtilisateur', pseudo, function(err, result) 
             {
                 if(err){
                     pseudoExiste = false;
